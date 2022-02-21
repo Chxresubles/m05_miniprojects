@@ -15,6 +15,7 @@ for this mini-project.
 # ============================================================================================================
 
 import numpy
+from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 
 # ============================================================================================================
@@ -27,24 +28,32 @@ import numpy
 # ============================================================================================================
 
 def estimate_norm(data):
+  """Estimate the mean and the std of the data."""
   return data.mean(axis=0), data.std(axis=0, ddof=1)
 
 
 def normalize(data, norm):
+  """Normalize the data using the given mean and std."""
   return numpy.array([(k - norm[0]) / norm[1] for k in data])
 
 
 def min_max_scaling(data):
-  return None
+  """Min Max Scaling of the data."""
+  scaler = MinMaxScaler()
+  return scaler.fit_transform(data)
 
 
 def z_norm(data):
-  return None
+  """Z normalisation of the data."""
+  scaler = StandardScaler()
+  return scaler.fit_transform(data)
 
 
 def min_max_scaling_poly(data, polynoms):
+  """Min Max Scaling of the data using the given polynomial function."""
   return None
 
 
 def z_norm_ poly(data, polynoms):
+  """Z normalisation of the data using the given polynomial function."""
   return None
