@@ -41,6 +41,8 @@ Active
 - [ ] Add unit tests for utility functions
 - [ ] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
+- [ ] Test input parameters of preprocessing functions
+- [ ] Test input parameters of dataset functions
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
