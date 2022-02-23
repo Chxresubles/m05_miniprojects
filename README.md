@@ -28,7 +28,7 @@ Active
 - [x] Add dataset utility functions
 - [x] Add preprocessing utility base functions
 - [ ] Add preprocessing utility polynomial functions
-- [ ] Add analysis utility functions
+- [x] Add analysis utility functions
 - [ ] Implement LR for wine_quality
 - [ ] Implement RT for wine_quality
 - [ ] Implement LR for boston_house_prices
@@ -38,6 +38,9 @@ Active
 - [ ] Add License
 - [ ] Add version number badge in wine_quality README.md
 - [ ] Add version number badge in boston_house_prices README.md
+- [ ] Add unit tests for utility functions
+- [ ] Add unit tests for wine_quality functions
+- [ ] Add unit tests for boston_house_prices functions
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
