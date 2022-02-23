@@ -54,6 +54,6 @@ def min_max_scaling_poly(data, polynoms):
   return None
 
 
-def z_norm_ poly(data, polynoms):
+def z_norm_poly(data, polynoms):
   """Z normalisation of the data using the given polynomial function."""
   return None
