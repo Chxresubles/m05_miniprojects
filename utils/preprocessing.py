@@ -14,7 +14,7 @@ for this mini-project.
 # Imports
 # ============================================================================================================
 
-import numpy
+import numpy as np
 from sklearn.preprocessing import MinMaxScaler, StandardScaler
 
 
@@ -34,7 +34,7 @@ def estimate_norm(data):
 
 def normalize(data, norm):
   """Normalize the data using the given mean and std."""
-  return numpy.array([(k - norm[0]) / norm[1] for k in data])
+  return np.array([(k - norm[0]) / norm[1] for k in data])
 
 
 def min_max_scaling(data):
