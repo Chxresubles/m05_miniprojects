@@ -31,7 +31,7 @@ def MAE(prediction, ground_truth):
         raise TypeError('prediction must be a numpy array')
     if not isinstance(ground_truth, np.ndarray):
         raise TypeError('ground_truth must be a numpy array')
-    if prediction.shape == ground_truth.shape:
+    if prediction.shape != ground_truth.shape:
         raise TypeError('prediction and ground_truth must have the same shape')
     if len(prediction.shape) != 1:
         raise TypeError('prediction and ground_truth must be Nx1 vectors')
