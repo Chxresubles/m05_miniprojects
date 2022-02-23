@@ -23,8 +23,8 @@ Special thanks to all members of this project for their work and to all teaching
 Active
 
 ## ToDo
-- [ ] Add dataset to wine_quality
-- [ ] Add dataset to boston_house_prices
+- [x] Add dataset to wine_quality
+- [x] Add dataset to boston_house_prices
 - [ ] Add dataset utility functions
 - [ ] Add preprocessing utility functions
 - [ ] Add analysis utility functions
