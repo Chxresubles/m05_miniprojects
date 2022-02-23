@@ -14,6 +14,7 @@ for this mini-project.
 # Imports
 # ============================================================================================================
 
+import os
 import numpy
 import csv
 import re
@@ -71,6 +72,10 @@ HOUSE_VARIABLES = [
         'MEDV',
         ]
 
+WINE_FILE_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'wine_quality', 'dataset')
+
+HOUSE_FILE_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'boston_house_prices', 'dataset')
+
 
 # ============================================================================================================
 # Useful functions
@@ -80,21 +85,21 @@ def load_dataset(dataset):
     """Load the wanted dataset in a numpy array."""
     data = []
     if dataset == 'red wine':
-        with open('winequality-red.csv', 'rt') as f: # TODO: Fix dataset path
+        with open(os.path.join(WINE_FILE_PATH, 'winequality-red.csv'), 'rt') as f:
             reader = csv.reader(f, delimiter=';')
             data = load(reader, True)
     elif dataset == 'white wine':
-        with open('winequality-white.csv', 'rt') as f: # TODO: Fix dataset path
+        with open(os.path.join(WINE_FILE_PATH, 'winequality-white.csv'), 'rt') as f:
             reader = csv.reader(f, delimiter=';')
             data = load(reader, True)
     elif dataset == 'houses':
-        with open('housing.data', 'rt') as f, open('housing.csv', 'wt') as fcsv: # TODO: Fix dataset path
+        with open(os.path.join(HOUSE_FILE_PATH, 'housing.data'), 'rt') as f, open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'wt') as fcsv:
             for line in f:
                 str = re.sub(' +', ';', line)
                 str = re.sub(' \n', '\n', str)
                 str.lstrip()
                 fcsv.write(str[1:])
-        with open('housing.csv', 'rt') as f:  # TODO: Fix dataset path
+        with open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'rt') as f:
             reader = csv.reader(f, delimiter=';')
             data = load(reader, False)
     return data
