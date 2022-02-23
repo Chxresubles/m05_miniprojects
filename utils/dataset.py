@@ -15,7 +15,7 @@ for this mini-project.
 # ============================================================================================================
 
 import os
-import numpy
+import numpy as np
 import csv
 import re
 from sklearn.model_selection import train_test_split
@@ -109,8 +109,8 @@ def load(reader, skip_first_line):
     data = []
     for k, row in enumerate(reader):
         if not k and skip_first_line: continue
-        data.append(numpy.array([float(z) for z in row]))
-    data = numpy.vstack(data)
+        data.append(np.array([float(z) for z in row]))
+    data = np.vstack(data)
     return data
 
 
