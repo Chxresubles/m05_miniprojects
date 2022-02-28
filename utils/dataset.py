@@ -53,6 +53,7 @@ WINE_VARIABLES = [
         'pH',
         'Sulphates',
         'Alcohol',
+        'Quality'
         ]
 
 HOUSE_VARIABLES = [
@@ -120,6 +121,6 @@ def split_data(data, subset, splits):
 
 
 def get(protocol, subset):
-    """Retrieve the wanted data subset as a numpy array."""
-    retval = split_data(load_dataset(PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
-    return retval
+    """Retrieve the wanted data subset as two numpy arrays X and Y."""
+    fullData = split_data(load_dataset(PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
+    return (fullData.T[:fullData.shape[1]-1].T, fullData.T[-1].T)
