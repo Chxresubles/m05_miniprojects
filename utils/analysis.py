@@ -46,4 +46,4 @@ def MAE(prediction, ground_truth):
         raise TypeError('prediction and ground_truth must be Nx1 vectors')
 
     errors = np.absolute(np.subtract(prediction, ground_truth)).sum()
-    return (errors / len(prediction))
+    return errors / len(prediction)
