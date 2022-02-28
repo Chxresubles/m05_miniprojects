@@ -18,7 +18,6 @@ import os
 import numpy as np
 import csv
 import re
-from sklearn.model_selection import train_test_split
 
 
 # ============================================================================================================
@@ -159,6 +158,5 @@ def get(protocol, subset):
     Returns:
         (array,array): two array X and Y
     """
-    fullData = split_data(load_dataset(
-        PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
-    return (fullData.T[:fullData.shape[1]-1].T, fullData.T[-1].T)
+    fullData = split_data(load_dataset(PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
+    return fullData.T[:fullData.shape[1]-1].T, fullData.T[-1].T.reshape(-1, 1)
