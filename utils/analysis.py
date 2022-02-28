@@ -26,7 +26,16 @@ import numpy as np
 # ============================================================================================================
 
 def MAE(prediction, ground_truth):
-    """Calculate the mean absolute error for the predictions compared to the ground truth."""
+    """Calculate the mean absolute error for the predictions compared to the ground truth.
+
+    Args:
+        prediction (array): array that contains the predictions
+        ground_truth (array): array that contains the ground_truth
+
+    Returns:
+        float: returns the Mean Absolute Error
+    """
+
     if not isinstance(prediction, np.ndarray):
         raise TypeError('prediction must be a numpy array')
     if not isinstance(ground_truth, np.ndarray):
@@ -35,6 +44,6 @@ def MAE(prediction, ground_truth):
         raise TypeError('prediction and ground_truth must have the same shape')
     if len(prediction.shape) != 1:
         raise TypeError('prediction and ground_truth must be Nx1 vectors')
-    
+
     errors = np.absolute(np.subtract(prediction, ground_truth)).sum()
     return (errors / len(prediction))
