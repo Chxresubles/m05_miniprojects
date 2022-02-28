@@ -36,7 +36,6 @@ def estimate_norm(data):
     Returns:
         (float,float): mean and std of the data
     """
-
     return data.mean(axis=0), data.std(axis=0, ddof=1)
 
 

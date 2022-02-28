@@ -29,7 +29,7 @@ Active
 - [x] Add preprocessing utility base functions
 - [ ] Add preprocessing utility polynomial functions
 - [x] Add analysis utility functions
-- [ ] Implement LR for wine_quality
+- [x] Implement LR for wine_quality
 - [ ] Implement RT for wine_quality
 - [ ] Implement LR for boston_house_prices
 - [ ] Implement RT for boston_house_prices
