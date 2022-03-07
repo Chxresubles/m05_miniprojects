@@ -107,7 +107,7 @@ def trainAndTest(model_type, preprocess, eval_set_str, color, poly):
 
     # Data preprocessing
     # Generate polynomial features
-    if poly > 0:
+    if poly > 1:
         train_set_X = preprocessing.poly(train_set_X, poly)
         test_set_X = preprocessing.poly(test_set_X, poly)
 
