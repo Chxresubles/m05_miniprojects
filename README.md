@@ -27,7 +27,7 @@ Active
 - [x] Add dataset to boston_house_prices
 - [x] Add dataset utility functions
 - [x] Add preprocessing utility base functions
-- [ ] Add preprocessing utility polynomial functions
+- [x] Add preprocessing utility polynomial functions
 - [x] Add analysis utility functions
 - [x] Implement LR for wine_quality
 - [x] Implement RT for wine_quality
