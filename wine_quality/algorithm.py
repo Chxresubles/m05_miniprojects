@@ -16,6 +16,7 @@ the wine intrinsic properties:
 # ============================================================================================================
 
 from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeClassifier
 from utils import dataset, preprocessing, analysis
 
 
@@ -66,8 +67,9 @@ def RT_train(train_X, train_Y):
     Returns:
         model: Returns the trained RT model
     """
-    # RT training
-    pass
+    reg_model = DecisionTreeClassifier(random_state=0)
+    reg_model.fit(train_X, train_Y)
+    return reg_model
 
 
 def RT_evaluate(model, test_X, test_Y):
@@ -78,8 +80,9 @@ def RT_evaluate(model, test_X, test_Y):
         test_X (ndarray): Testing set data of shape (n_samples, n_features)
         test_Y (ndarray): Testing set targets of shape (n_samples, n_targets)
     """
-    # RT evaluation on the set
-    pass
+    prediction = model.predict(test_X).reshape(-1, 1)
+    MAE = analysis.MAE(prediction, test_Y)
+    print(f"The mean absolute error of the model is: {MAE}\n")
 
 
 def trainAndTest(model_type, preprocess, eval_set_str, color):
@@ -103,14 +106,10 @@ def trainAndTest(model_type, preprocess, eval_set_str, color):
     # Data preprocessing
     if preprocess in 'minmax':
         train_set_X = preprocessing.min_max_scaling(train_set_X)
-        train_set_Y = preprocessing.min_max_scaling(train_set_Y)
         test_set_X = preprocessing.min_max_scaling(test_set_X)
-        test_set_Y = preprocessing.min_max_scaling(test_set_Y)
     elif preprocess == 'znorm':
         train_set_X = preprocessing.z_norm(train_set_X)
-        train_set_Y = preprocessing.z_norm(train_set_Y)
         test_set_X = preprocessing.z_norm(test_set_X)
-        test_set_Y = preprocessing.z_norm(test_set_Y)
     else:
         raise ValueError(f'Preprocessing value was not recognized: {preprocessing}')
 

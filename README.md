@@ -30,7 +30,7 @@ Active
 - [ ] Add preprocessing utility polynomial functions
 - [x] Add analysis utility functions
 - [x] Implement LR for wine_quality
-- [ ] Implement RT for wine_quality
+- [x] Implement RT for wine_quality
 - [ ] Implement LR for boston_house_prices
 - [ ] Implement RT for boston_house_prices
 - [ ] List needed packages for wine_quality in a requirement.txt

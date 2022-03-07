@@ -123,7 +123,7 @@ def load(reader, skip_first_line):
         skip_first_line (boolean): skip first line or not
 
     Returns:
-        array: array that contains the data
+        ndarray: array that contains the data
     """
     data = []
     for k, row in enumerate(reader):
@@ -138,12 +138,12 @@ def split_data(data, subset, splits):
     """Get the wanted subset from the data as numpy array
 
     Args:
-        data (array): contains the data
-        subset (integer): train or test
-        splits (array): list of index of the subset
+        data (ndarray): contains the data
+        subset (string): the wanted subset (either 'train' or 'test')
+        splits (ndarray): list of index of the subset
 
     Returns:
-        array: array splited
+        ndarray: array splited
     """
     return data[splits[subset]]
 
@@ -152,11 +152,11 @@ def get(protocol, subset):
     """Retrieve the wanted data subset as two numpy arrays X and Y
 
     Args:
-        protocol (dict): which protocol we want to use (red, white, houses)
-        subset (integer): number of subsets
+        protocol (string): which protocol we want to use (red, white, houses)
+        subset (string): the wanted subset (either 'train' or 'test')
 
     Returns:
-        (array,array): two array X and Y
+        (ndarray,ndarray): two array X and Y
     """
     fullData = split_data(load_dataset(
         PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
