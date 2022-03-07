@@ -15,7 +15,7 @@ for this mini-project.
 # ============================================================================================================
 
 import numpy as np
-from sklearn.preprocessing import MinMaxScaler, StandardScaler
+from sklearn.preprocessing import MinMaxScaler, StandardScaler, PolynomialFeatures
 
 
 # ============================================================================================================
@@ -31,7 +31,7 @@ def estimate_norm(data):
     """Estimates the mean and the std of the data
 
     Args:
-        data (array): array that contains the data
+        data (ndarray): array that contains the data
 
     Returns:
         (float,float): mean and std of the data
@@ -43,11 +43,11 @@ def normalize(data, norm):
     """Normalize the data using the given mean and std
 
     Args:
-        data (array): array that contains the data
+        data (ndarray): array that contains the data
         norm (tuple): tuple containing the mean and std
 
     Returns:
-        array: normalized array
+        ndarray: normalized array
     """
     return np.array([(k - norm[0]) / norm[1] for k in data])
 
@@ -56,10 +56,10 @@ def min_max_scaling(data):
     """Min max scaling of the data
 
     Args:
-        data (array): array that contains the data
+        data (ndarray): array that contains the data
 
     Returns:
-        array: scalled array (value from 0 to 1)
+        ndarray: scaled array (value from 0 to 1)
     """
     scaler = MinMaxScaler()
     return scaler.fit_transform(data)
@@ -69,20 +69,25 @@ def z_norm(data):
     """Z normalisation of the data
 
     Args:
-        data (array): array that contains the data
+        data (ndarray): array that contains the data
 
     Returns:
-        array: normalized array
+        ndarray: normalized array
     """
     scaler = StandardScaler()
     return scaler.fit_transform(data)
 
 
-def min_max_scaling_poly(data, polynoms):
-    """Min Max Scaling of the data using the given polynomial function."""
-    return None
+def poly(data, degree):
+    """Generate polynomial features from the data
 
+    Args:
+        data (ndarray): array that contains the data
+        degree (int): the maximal degree of the polynomial features
 
-def z_norm_poly(data, polynoms):
-    """Z normalisation of the data using the given polynomial function."""
-    return None
+    Returns:
+        ndarray: new feature matrix consisting of all polynomial combinations
+        of the features with degree less than or equal to the specified degree
+    """
+    poly_feats = PolynomialFeatures(degree)
+    return poly_feats.fit_transform(data)
