@@ -38,11 +38,13 @@ Active
 - [ ] Add License
 - [ ] Add version number badge in wine_quality README.md
 - [ ] Add version number badge in boston_house_prices README.md
-- [ ] Add unit tests for utility functions
+- [x] Add unit tests for utility functions
 - [ ] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
 - [ ] Test input parameters of preprocessing functions
 - [ ] Test input parameters of dataset functions
+- [ ] Create script to run ML tasks with the command line interface
+- [ ] Rework utils/dataset to have 3 different split of the train/test subsets
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
