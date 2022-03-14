@@ -140,4 +140,3 @@ def trainAndTest(model_type, preprocess, eval_set_str, color, poly):
         RT_evaluate(model, eval_set_X, eval_set_Y)
     else:
         raise ValueError(f'Model type value was not recognized: {model_type}')
-
