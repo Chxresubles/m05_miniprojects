@@ -39,19 +39,6 @@ def estimate_norm(data):
     return data.mean(axis=0), data.std(axis=0)
 
 
-def normalize(data, norm):
-    """Normalize the data using the given mean and std
-
-    Args:
-        data (ndarray): array that contains the data
-        norm (tuple): tuple containing the mean and std
-
-    Returns:
-        ndarray: normalized array
-    """
-    return np.array([(k - norm[0]) / norm[1] for k in data])
-
-
 def min_max_scaling(data):
     """Min max scaling of the data
 
