@@ -96,6 +96,8 @@ def trainAndTest(model_type, preprocess, eval_set_str, color, poly):
         poly (int): the maximal degree of the new polynomial features
                     (Call with 0 or 1 to not generate new polynomial features)
     """
+    if color not in ['red', 'white']:
+        raise ValueError(f'Color value was not recognized: {color}')
     # Load datasets
     train_set = dataset.get(color, 'train')
     test_set = dataset.get(color, 'test')
