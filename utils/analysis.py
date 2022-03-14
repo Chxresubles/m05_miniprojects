@@ -29,8 +29,8 @@ def MAE(prediction, ground_truth):
     """Calculate the mean absolute error for the predictions compared to the ground truth.
 
     Args:
-        prediction (array): array that contains the predictions
-        ground_truth (array): array that contains the ground_truth
+        prediction (ndarray): array that contains the predictions
+        ground_truth (ndarray): array that contains the ground_truth
 
     Returns:
         float: returns the Mean Absolute Error
