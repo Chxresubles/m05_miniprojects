@@ -77,6 +77,7 @@ def test_RT_evaluate():
     model = algorithm.RT_train(X, Y)
     algorithm.RT_evaluate(model, X, Y)
 
+
 def test_trainAndTest_model():
     """Check that the trainAndTest function works with both red and white wine.
     """
