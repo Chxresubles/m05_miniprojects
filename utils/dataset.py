@@ -150,7 +150,7 @@ def split_data(data, subset, splits):
 
     Args:
         data (ndarray): contains the data
-        subset (string): the wanted subset
+        subset (string): the wanted subset from the list SUBSETS
         splits (dict): the dict containing the list of subset and its random_state
 
     Returns:
@@ -183,10 +183,14 @@ def get(protocol, subset, part):
         raise TypeError('protocol must be a str')
     if not isinstance(subset, str):
         raise TypeError('subset must be a str')
+    if not isinstance(part, str):
+        raise TypeError('part must be a str')
     if protocol not in PROTOCOLS:
         raise ValueError(f'protocol was not found in available protocols: {protocol}')
     if subset not in SUBSETS:
         raise ValueError(f'subset was not found in available subsets: {subset}')
+    if part not in ['train', 'test']:
+        raise ValueError(f"part must either be 'train' or 'test': not {part}")
 
     fullData = split_data(load_dataset(
         PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
@@ -195,5 +199,5 @@ def get(protocol, subset, part):
     elif part == 'test':
         wantedData = fullData[1]
     else:
-        raise ValueError(f'part value is neither train or test: {part}')
+        raise ValueError(f"part must either be 'train' or 'test': not {part}")
     return wantedData.T[:wantedData.shape[1]-1].T, wantedData.T[-1].T.reshape(-1, 1)
