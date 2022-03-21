@@ -36,7 +36,7 @@ from utils import analysis
 # Unit tests
 # ============================================================================================================
 
-def test_MAE_noErrors():
+def test_MAE_no_errors():
     """Check that the mean absolute error function works properly with 0 errors.
     """
     pred = np.array([[1, 1]]).T
@@ -45,7 +45,7 @@ def test_MAE_noErrors():
     assert analysis.MAE(pred, gt) == 0, 'Mean absolute error should be 0, (|1-1| + |1-1|)/2.'
 
 
-def test_MAE_positiveError():
+def test_MAE_positive_error():
     """Check that the mean absolute error function works properly with a positive error.
     """
     pred = np.array([[1, 1]]).T
@@ -54,7 +54,7 @@ def test_MAE_positiveError():
     assert analysis.MAE(pred, gt) == 0.5, 'Mean absolute error should be 0.5, (|1-1| + |1-0|)/2.'
 
 
-def test_MAE_negativeErrors():
+def test_MAE_negative_errors():
     """Check that the mean absolute error function works properly with a negative error.
     """
     pred = np.array([[1, 0]]).T
@@ -63,13 +63,24 @@ def test_MAE_negativeErrors():
     assert analysis.MAE(pred, gt) == 0.5, 'Mean absolute error should be 0.5, (|1-1| + |0-1|)/2.'
 
 
-def test_MAE_allErrors():
+def test_MAE_all_errors():
     """Check that the mean absolute error function works properly with only errors.
     """
     pred = np.array([[0, 0]]).T
     gt = np.array([[1, 1]]).T
 
     assert analysis.MAE(pred, gt) == 1, 'Mean absolute error should be 1, (|0-1| + |0-1|)/2.'
+
+
+@pytest.mark.parametrize("prediction, ground_truth", [(1, np.array([[0, 0]]).T),
+                                                      (np.array([[0, 0]]).T, 1),
+                                                      (np.array([[0, 0, 0]]).T, np.array([[0]]).T),
+                                                      (np.array([[0, 0], [0, 0]]).T, np.array([[0, 0], [0, 0]]).T)])
+def test_MAE_type_errors(prediction, ground_truth):
+    """Check that the mean absolute error function throws a Type Error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        analysis.MAE(prediction, ground_truth)
 
 
 # ============================================================================================================
