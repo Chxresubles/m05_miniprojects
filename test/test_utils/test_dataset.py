@@ -17,6 +17,7 @@ $ pytest test/test_utils/test_dataset.py -vv -s
 # ============================================================================================================
 
 import pytest
+import numpy as np
 from utils import dataset
 
 
@@ -33,6 +34,39 @@ from utils import dataset
 # ============================================================================================================
 # Unit tests
 # ============================================================================================================
+
+def test_load_dataset_params_errors():
+    """Check that the load_dataset function throws an error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        dataset.load_dataset(0)
+    with pytest.raises(ValueError):
+        dataset.load_dataset('blueberries')
+
+
+def test_load_params_errors():
+    """Check that the load function throws an error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        dataset.load(0, 'true')
+
+
+@pytest.mark.parametrize("data, subset, splits", [(1, 'set1', {}),
+                                                  (np.zeros((1, 1)), 1, {}),
+                                                  (np.zeros((1, 1)), 'set1', 1)])
+def test_split_data_type_errors(data, subset, splits):
+    """Check that the split_data function throws a Type error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        dataset.split_data(data, subset, splits)
+
+
+def test_split_data_value_errors():
+    """Check that the split_data function throws a Value error when a wrong parameter is given.
+    """
+    with pytest.raises(ValueError):
+        dataset.split_data(np.zeros((1, 1)), 'indy_set', {})
+
 
 @pytest.mark.parametrize("protocol, subset, part", [('red', 'set1', 'train'), ('red', 'set1', 'test'),
                                                     ('white', 'set1', 'train'), ('white', 'set1', 'test'),
