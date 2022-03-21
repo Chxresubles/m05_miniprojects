@@ -15,6 +15,7 @@ for this mini-project.
 # ============================================================================================================
 
 from sklearn.preprocessing import MinMaxScaler, StandardScaler, PolynomialFeatures
+import numpy as np
 
 
 # ============================================================================================================
