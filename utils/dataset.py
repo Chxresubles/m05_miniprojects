@@ -93,6 +93,11 @@ def load_dataset(dataset):
     Returns:
         array: contains the wanted dataset
     """
+    if not isinstance(dataset, str):
+        raise TypeError('dataset must be a string')
+    if dataset not in DATASETS:
+        raise ValueError(f'dataset was not found in available datasets: {dataset}')
+
     data = []
     if dataset == 'red wine':
         with open(os.path.join(WINE_FILE_PATH, 'winequality-red.csv'), 'rt') as f:
@@ -106,10 +111,10 @@ def load_dataset(dataset):
         with open(os.path.join(HOUSE_FILE_PATH, 'housing.data'), 'rt') as f:
             with open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'wt') as fcsv:
                 for line in f:
-                    str = re.sub(' +', ';', line)
-                    str = re.sub(' \n', '\n', str)
-                    str.lstrip()
-                    fcsv.write(str[1:])
+                    a_str = re.sub(' +', ';', line)
+                    a_str = re.sub(' \n', '\n', a_str)
+                    a_str.lstrip()
+                    fcsv.write(a_str[1:])
         with open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'rt') as f:
             reader = csv.reader(f, delimiter=';')
             data = load(reader, False)
@@ -126,6 +131,9 @@ def load(reader, skip_first_line):
     Returns:
         ndarray: array that contains the data
     """
+    if not isinstance(skip_first_line, bool):
+        raise TypeError('skip_first_line must be a bool')
+
     data = []
     for k, row in enumerate(reader):
         if not k and skip_first_line:
@@ -146,6 +154,15 @@ def split_data(data, subset, splits):
     Returns:
         ndarray: array splited
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be a numpy array')
+    if not isinstance(subset, str):
+        raise TypeError('subset must be a str')
+    if not isinstance(splits, dict):
+        raise TypeError('splits must be a dict')
+    if subset not in SUBSETS:
+        raise ValueError(f'subset was not found in available subsets: {subset}')
+
     return data[splits[subset]]
 
 
@@ -159,6 +176,15 @@ def get(protocol, subset):
     Returns:
         (ndarray,ndarray): two array X and Y
     """
+    if not isinstance(protocol, str):
+        raise TypeError('protocol must be a str')
+    if not isinstance(subset, str):
+        raise TypeError('subset must be a str')
+    if protocol not in PROTOCOLS:
+        raise ValueError(f'protocol was not found in available protocols: {protocol}')
+    if subset not in SUBSETS:
+        raise ValueError(f'subset was not found in available subsets: {subset}')
+
     fullData = split_data(load_dataset(
         PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
     return fullData.T[:fullData.shape[1]-1].T, fullData.T[-1].T.reshape(-1, 1)

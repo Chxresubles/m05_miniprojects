@@ -41,8 +41,8 @@ Active
 - [x] Add unit tests for utility functions
 - [x] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
-- [ ] Test input parameters of preprocessing functions
-- [ ] Test input parameters of dataset functions
+- [x] Test input parameters of preprocessing functions
+- [x] Test input parameters of dataset functions
 - [ ] Create script to run ML tasks with the command line interface
 - [ ] Rework utils/dataset to have 3 different split of the train/test subsets
 
