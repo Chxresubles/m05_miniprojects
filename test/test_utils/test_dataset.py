@@ -8,7 +8,7 @@ the handling of the datasets for the ML algorithms.
 
 This file can be run using pytest with:
 
-$ pytest test/utils/test_dataset.py -vv -s
+$ pytest test/test_utils/test_dataset.py -vv -s
 """
 
 
@@ -17,7 +17,7 @@ $ pytest test/utils/test_dataset.py -vv -s
 # ============================================================================================================
 
 import pytest
-import dataset
+from utils import dataset
 
 
 # ============================================================================================================

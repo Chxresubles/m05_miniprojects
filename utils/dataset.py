@@ -103,12 +103,13 @@ def load_dataset(dataset):
             reader = csv.reader(f, delimiter=';')
             data = load(reader, True)
     elif dataset == 'houses':
-        with open(os.path.join(HOUSE_FILE_PATH, 'housing.data'), 'rt') as f, open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'wt') as fcsv:
-            for line in f:
-                str = re.sub(' +', ';', line)
-                str = re.sub(' \n', '\n', str)
-                str.lstrip()
-                fcsv.write(str[1:])
+        with open(os.path.join(HOUSE_FILE_PATH, 'housing.data'), 'rt') as f:
+            with open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'wt') as fcsv:
+                for line in f:
+                    str = re.sub(' +', ';', line)
+                    str = re.sub(' \n', '\n', str)
+                    str.lstrip()
+                    fcsv.write(str[1:])
         with open(os.path.join(HOUSE_FILE_PATH, 'housing.csv'), 'rt') as f:
             reader = csv.reader(f, delimiter=';')
             data = load(reader, False)

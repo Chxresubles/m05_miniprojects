@@ -42,7 +42,7 @@ def MAE(prediction, ground_truth):
         raise TypeError('ground_truth must be a numpy array')
     if prediction.shape != ground_truth.shape:
         raise TypeError('prediction and ground_truth must have the same shape')
-    if prediction.shape[1] != 1:
+    if len(prediction.shape) != 1 and prediction.shape[1] != 1:
         raise TypeError('prediction and ground_truth must be Nx1 vectors')
 
     errors = np.absolute(np.subtract(prediction, ground_truth)).sum()

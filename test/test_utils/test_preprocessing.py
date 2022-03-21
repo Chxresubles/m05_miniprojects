@@ -8,7 +8,7 @@ the preprocessing of the data for the ML algorithms.
 
 This file can be run using pytest with:
 
-$ pytest test/utils/test_preprocessing.py -vv -s
+$ pytest test/test_utils/test_preprocessing.py -vv -s
 """
 
 
@@ -18,7 +18,7 @@ $ pytest test/utils/test_preprocessing.py -vv -s
 
 import numpy as np
 import pytest
-import preprocessing
+from utils import preprocessing
 
 
 # ============================================================================================================

@@ -9,7 +9,7 @@ for result analysis.
 
 This file can be run using pytest with:
 
-$ pytest test/utils/test_analysis.py -vv -s
+$ pytest test/test_utils/test_analysis.py -vv -s
 """
 
 
@@ -19,7 +19,7 @@ $ pytest test/utils/test_analysis.py -vv -s
 
 import numpy as np
 import pytest
-import analysis
+from utils import analysis
 
 
 # ============================================================================================================
