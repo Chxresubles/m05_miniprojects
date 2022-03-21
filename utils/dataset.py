@@ -18,15 +18,16 @@ import os
 import numpy as np
 import csv
 import re
+from sklearn.model_selection import train_test_split
 
 
 # ============================================================================================================
 # Constants
 # ============================================================================================================
 PROTOCOLS = {
-    'red': {'dataset': 'red wine', 'train': range(0, 1599, 2), 'test': range(1, 1599, 2)},
-    'white': {'dataset': 'white wine', 'train': range(0, 4898, 2), 'test': range(1, 4898, 2)},
-    'houses': {'dataset': 'houses', 'train': range(0, 506, 2), 'test': range(1, 506, 2)},
+    'red': {'dataset': 'red wine', 'set1': 23, 'set2': 42, 'set3': 69},
+    'white': {'dataset': 'white wine', 'set1': 23, 'set2': 42, 'set3': 69},
+    'houses': {'dataset': 'houses', 'set1': 23, 'set2': 42, 'set3': 69},
 }
 
 DATASETS = [
@@ -36,8 +37,9 @@ DATASETS = [
 ]
 
 SUBSETS = [
-    'train',
-    'test',
+    'set1',
+    'set2',
+    'set3',
 ]
 
 WINE_VARIABLES = [
@@ -148,11 +150,11 @@ def split_data(data, subset, splits):
 
     Args:
         data (ndarray): contains the data
-        subset (string): the wanted subset (either 'train' or 'test')
-        splits (ndarray): list of index of the subset
+        subset (string): the wanted subset
+        splits (dict): the dict containing the list of subset and its random_state
 
     Returns:
-        ndarray: array splited
+        (ndarray,ndarray): data split into (data_train, data_test)
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')
@@ -163,15 +165,16 @@ def split_data(data, subset, splits):
     if subset not in SUBSETS:
         raise ValueError(f'subset was not found in available subsets: {subset}')
 
-    return data[splits[subset]]
+    return train_test_split(data, train_size=0.5, test_size=0.5, random_state=splits[subset])
 
 
-def get(protocol, subset):
+def get(protocol, subset, part):
     """Retrieve the wanted data subset as two numpy arrays X and Y
 
     Args:
         protocol (string): which protocol we want to use (red, white, houses)
-        subset (string): the wanted subset (either 'train' or 'test')
+        subset (string): the wanted subset from the list SUBSETS
+        part (string): the wanted part (either 'train' or 'test')
 
     Returns:
         (ndarray,ndarray): two array X and Y
@@ -187,4 +190,10 @@ def get(protocol, subset):
 
     fullData = split_data(load_dataset(
         PROTOCOLS[protocol]['dataset']), subset, PROTOCOLS[protocol])
-    return fullData.T[:fullData.shape[1]-1].T, fullData.T[-1].T.reshape(-1, 1)
+    if part == 'train':
+        wantedData = fullData[0]
+    elif part == 'test':
+        wantedData = fullData[1]
+    else:
+        raise ValueError(f'part value is neither train or test: {part}')
+    return wantedData.T[:wantedData.shape[1]-1].T, wantedData.T[-1].T.reshape(-1, 1)
