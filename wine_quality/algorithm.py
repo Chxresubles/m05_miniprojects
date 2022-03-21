@@ -85,12 +85,13 @@ def RT_evaluate(model, test_X, test_Y):
     print(f"The mean absolute error of the model is: {MAE}\n")
 
 
-def trainAndTest(model_type, preprocess, eval_set_str, color, poly):
+def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
     """Run training and testing on the chosen wine quality set using the wanted model type.
 
     Args:
         model_type (string): The model type to use (Can be either 'LR' or 'RT')
         preprocess (string): The preprocessing function to use (Can be either 'minmax' or 'znorm')
+        subset (string): The set of train/test data to use
         eval_set_str (string): The set to use for evaluation (Can be either 'train' or 'test')
         color (string): The color of the wine (Can be either 'red' or 'white')
         poly (int): the maximal degree of the new polynomial features
@@ -99,8 +100,8 @@ def trainAndTest(model_type, preprocess, eval_set_str, color, poly):
     if color not in ['red', 'white']:
         raise ValueError(f'Color value was not recognized: {color}')
     # Load datasets
-    train_set = dataset.get(color, 'train')
-    test_set = dataset.get(color, 'test')
+    train_set = dataset.get(color, subset, 'train')
+    test_set = dataset.get(color, subset, 'test')
 
     train_set_X = train_set[0]
     train_set_Y = train_set[1]
