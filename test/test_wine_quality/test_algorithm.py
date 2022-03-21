@@ -81,45 +81,45 @@ def test_RT_evaluate():
 def test_trainAndTest_model():
     """Check that the trainAndTest function works with both red and white wine.
     """
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
-    algorithm.trainAndTest('RT', 'minmax', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 1)
+    algorithm.trainAndTest('RT', 'minmax', 'set1', 'train', 'red', 1)
     with pytest.raises(ValueError):
-        algorithm.trainAndTest('random_model', 'minmax', 'train', 'red', 1)
+        algorithm.trainAndTest('random_model', 'minmax', 'set1', 'train', 'red', 1)
 
 
 def test_trainAndTest_norm():
     """Check that the trainAndTest function works with both red and white wine.
     """
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
-    algorithm.trainAndTest('LR', 'znorm', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'znorm', 'set1', 'train', 'red', 1)
     with pytest.raises(ValueError):
-        algorithm.trainAndTest('LR', 'true_norm', 'train', 'red', 1)
+        algorithm.trainAndTest('LR', 'true_norm', 'set1', 'train', 'red', 1)
 
 
 def test_trainAndTest_evalSet():
     """Check that the trainAndTest function works with both red and white wine.
     """
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
-    algorithm.trainAndTest('LR', 'minmax', 'test', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'test', 'red', 1)
     with pytest.raises(ValueError):
-        algorithm.trainAndTest('LR', 'minmax', 'random_set', 'red', 1)
+        algorithm.trainAndTest('LR', 'minmax', 'set1', 'random_set', 'red', 1)
 
 
 def test_trainAndTest_color():
     """Check that the trainAndTest function works with both red and white wine.
     """
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'white', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'white', 1)
     with pytest.raises(ValueError):
-        algorithm.trainAndTest('LR', 'minmax', 'train', 'champagne', 1)
+        algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'champagne', 1)
 
 
 def test_trainAndTest_poly():
     """Check that the trainAndTest function works with both red and white wine.
     """
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 0)
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
-    algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 2)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 0)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 1)
+    algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 'red', 2)
 
 
 # ============================================================================================================
