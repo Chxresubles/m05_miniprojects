@@ -44,7 +44,7 @@ Active
 - [x] Test input parameters of preprocessing functions
 - [x] Test input parameters of dataset functions
 - [ ] Create script to run ML tasks with the command line interface
-- [ ] Rework utils/dataset to have 3 different split of the train/test subsets
+- [x] Rework utils/dataset to have 3 different split of the train/test subsets
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
