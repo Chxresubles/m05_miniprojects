@@ -39,7 +39,7 @@ Active
 - [ ] Add version number badge in wine_quality README.md
 - [ ] Add version number badge in boston_house_prices README.md
 - [x] Add unit tests for utility functions
-- [ ] Add unit tests for wine_quality functions
+- [x] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
 - [ ] Test input parameters of preprocessing functions
 - [ ] Test input parameters of dataset functions
