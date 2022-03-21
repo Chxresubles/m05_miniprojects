@@ -5,6 +5,9 @@ This repository hold 2 ML projects. One for determining of the quality of a wine
 Both projects [wine_quality](wine_quality/README.md) and [boston_house_prices](boston_house_prices/README.md) will perform Machine Learning tasks using 2 approaches: Linear Regression and Regression Trees.
 Each project has its own dataset included. The references of these datasets can be found in the documentation of the projects.
 
+# Badges
+[![Coverage Status](https://coveralls.io/repos/github/Chxresubles/m05_miniprojects/badge.svg?branch=master)](https://coveralls.io/github/Chxresubles/m05_miniprojects?branch=master)
+
 # Prerequisites
 To run these scripts, you must have [Python](https://www.python.org/) installed.
 
