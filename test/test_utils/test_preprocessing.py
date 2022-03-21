@@ -45,8 +45,15 @@ def test_estimate_norm():
     assert np.array_equal(std, np.array([1, 0.5, 0])), 'Wrong estimation of the standard deviation of the data'
 
 
+def test_estimate_norm_type_error():
+    """Check that the estimate norm function throws a Type Error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        preprocessing.estimate_norm(1)
+
+
 def test_min_max_scaling_boundaries():
-    """Check that the min max scaling fits values inside 0 and 1.
+    """Check that the min max scaling function fits values inside 0 and 1.
     """
     data = np.array([[-45, 25, 0.1638], [1.247, -421, 0]])
     scaled_data = preprocessing.min_max_scaling(data)
@@ -56,7 +63,7 @@ def test_min_max_scaling_boundaries():
 
 
 def test_min_max_scaling_values():
-    """Check that the min max scaling fits values for each column.
+    """Check that the min max scaling function fits values for each column.
     """
     data = np.array([[-1, 0, 1], [1, 1, 1]])
     scaled_data = preprocessing.min_max_scaling(data)
@@ -64,14 +71,28 @@ def test_min_max_scaling_values():
     assert np.array_equal(scaled_data, np.array([[0, 0, 0], [1, 1, 0]])), 'Wrong scaling of the data over [0, 1]'
 
 
+def test_min_max_scaling_type_error():
+    """Check that the min max scaling function throws a Type Error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        preprocessing.min_max_scaling(1)
+
+
 def test_z_norm_values():
-    """Check that the z normalisation computes the standard score of each value.
+    """Check that the z normalisation function computes the standard score of each value.
     """
     data = np.array([[0, 0], [0, 0], [1, 1], [1, 1]])
     score = np.array([[-1, -1], [-1, -1], [1, 1], [1, 1]])
     scaled_data = preprocessing.z_norm(data)
 
     assert np.array_equal(scaled_data, score), 'Wrong estimation of the standard score'
+
+
+def test_z_norm_type_error():
+    """Check that the z normalisation function throws a Type Error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        preprocessing.z_norm(1)
 
 
 def test_poly_2():
@@ -83,6 +104,15 @@ def test_poly_2():
     poly_data = preprocessing.poly(data, 2)
 
     assert np.array_equal(poly_data, polys), 'Wrong computation of the polynomials'
+
+
+def test_poly_type_error():
+    """Check that the poly function throws a Type Error when a wrong parameter is given.
+    """
+    with pytest.raises(TypeError):
+        preprocessing.poly(1, 1)
+    with pytest.raises(TypeError):
+        preprocessing.poly(np.zeros((1, 1)), '1')
 
 
 # ============================================================================================================
