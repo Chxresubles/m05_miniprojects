@@ -35,6 +35,9 @@ def estimate_norm(data):
     Returns:
         (float,float): mean and std of the data
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be a numpy array')
+
     return data.mean(axis=0), data.std(axis=0)
 
 
@@ -47,6 +50,9 @@ def min_max_scaling(data):
     Returns:
         ndarray: scaled array (value from 0 to 1)
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be a numpy array')
+
     scaler = MinMaxScaler()
     return scaler.fit_transform(data)
 
@@ -60,6 +66,9 @@ def z_norm(data):
     Returns:
         ndarray: normalized array
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be a numpy array')
+
     scaler = StandardScaler()
     return scaler.fit_transform(data)
 
@@ -75,5 +84,10 @@ def poly(data, degree):
         ndarray: new feature matrix consisting of all polynomial combinations
         of the features with degree less than or equal to the specified degree
     """
+    if not isinstance(data, np.ndarray):
+        raise TypeError('data must be a numpy array')
+    if not isinstance(degree, int):
+        raise TypeError('degree must be a int')
+
     poly_feats = PolynomialFeatures(degree)
     return poly_feats.fit_transform(data)
