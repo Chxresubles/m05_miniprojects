@@ -31,22 +31,12 @@ jobs:
         flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        coverage run -m --source utils,boston_house_prices,wine_quality pytest test -v --junitxml=report.xml
+        coverage run -m --source utils,boston_house_prices,wine_quality pytest test -vv
         coverage report
     - name: Upload coverage data to coveralls.io
-      run: coveralls --service=github
+      run: |
+        coveralls --service=github
+        coveralls --service=github --finish
       env:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          COVERALLS_PARALLEL: true
-  coveralls:
-    name: Indicate completion to coveralls.io
-    needs: build
-    runs-on: ubuntu-latest
-    container: python:3-slim
-    steps:
-    - name: Finished
-      run: |
-        pip3 install --upgrade coveralls
-        coveralls --service=github --finish
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
