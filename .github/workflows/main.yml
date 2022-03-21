@@ -33,7 +33,6 @@ jobs:
       run: |
         coverage run -m --source utils,boston_house_prices,wine_quality pytest test -v --junitxml=report.xml
         coverage report
-        coveralls
     - name: Upload coverage data to coveralls.io
       run: coveralls --service=github
       env:
