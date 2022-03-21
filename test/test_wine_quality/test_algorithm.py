@@ -111,7 +111,7 @@ def test_trainAndTest_color():
     algorithm.trainAndTest('LR', 'minmax', 'train', 'red', 1)
     algorithm.trainAndTest('LR', 'minmax', 'train', 'white', 1)
     with pytest.raises(ValueError):
-        algorithm.trainAndTest('LR', 'minmax', 'champagne', 'red', 1)
+        algorithm.trainAndTest('LR', 'minmax', 'train', 'champagne', 1)
 
 
 def test_trainAndTest_poly():
