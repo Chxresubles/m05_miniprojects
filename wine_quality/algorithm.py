@@ -82,7 +82,7 @@ def RT_evaluate(model, test_X, test_Y):
     """
     prediction = model.predict(test_X).reshape(-1, 1)
     MAE = analysis.MAE(prediction, test_Y)
-    print(f"The mean absolute error of the model is: {MAE}\n")
+    print(f"The mean absolute error of the model is: {MAE}")
 
 
 def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
@@ -100,8 +100,11 @@ def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
     if color not in ['red', 'white']:
         raise ValueError(f'Color value was not recognized: {color}')
     # Load datasets
+    print(f'Loading dataset {subset} ...')
     train_set = dataset.get(color, subset, 'train')
     test_set = dataset.get(color, subset, 'test')
+    print('Dataset loaded')
+    print('')
 
     train_set_X = train_set[0]
     train_set_Y = train_set[1]
@@ -111,10 +114,14 @@ def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
     # Data preprocessing
     # Generate polynomial features
     if poly > 1:
+        print(f'Generating polynomial features with degree {poly}...')
         train_set_X = preprocessing.poly(train_set_X, poly)
         test_set_X = preprocessing.poly(test_set_X, poly)
+        print('Done')
+        print('')
 
     # Scale features
+    print(f'Preprocessing data using {preprocess}...')
     if preprocess in 'minmax':
         train_set_X = preprocessing.min_max_scaling(train_set_X)
         test_set_X = preprocessing.min_max_scaling(test_set_X)
@@ -123,6 +130,8 @@ def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
         test_set_X = preprocessing.z_norm(test_set_X)
     else:
         raise ValueError(f'Preprocessing value was not recognized: {preprocessing}')
+    print('Preprocessing done')
+    print('')
 
     # Prepare evaluation set
     if eval_set_str == 'test':
@@ -136,10 +145,22 @@ def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
 
     # Model training and evaluation
     if model_type == 'LR':
+        print(f'Training algorithm using Linear Regression over {train_set_X.shape[0]} lines of data...')
         model = LR_train(train_set_X, train_set_Y)
+        print('Training done')
+        print('')
+        print(f'Evaluating algorithm using the {eval_set_str} set over {eval_set_X.shape[0]} lines of data...')
         LR_evaluate(model, eval_set_X, eval_set_Y)
+        print('Evaluation done')
+        print('')
     elif model_type == 'RT':
+        print(f'Training algorithm using Regression Trees using {train_set_X.shape[0]} lines of data...')
         model = RT_train(train_set_X, train_set_Y)
+        print('Training done')
+        print('')
+        print(f'Evaluating algorithm using the {eval_set_str} set over {eval_set_X.shape[0]} lines of data...')
         RT_evaluate(model, eval_set_X, eval_set_Y)
+        print('Evaluation done')
+        print('')
     else:
         raise ValueError(f'Model type value was not recognized: {model_type}')
