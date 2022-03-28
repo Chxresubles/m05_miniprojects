@@ -64,7 +64,7 @@ def trainAndTest(model_type, preprocess, eval_set_str):
     print(numpy.shape(test_prices))
     print(numpy.shape(test_features))
 
-    # Data preprocessing
+    # Data preprocessing, choose the method between minmax and znorm
     if preprocess in 'minmax':
         train_features = preprocessing.min_max_scaling(train_features)
         #train_prices = preprocessing.min_max_scaling(train_prices)
