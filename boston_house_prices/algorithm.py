@@ -49,10 +49,9 @@ def RT_evaluate(model, test_X, test_Y):
     print(f"The mean absolute error of the model is: {MAE}\n")
 
 def trainAndTest(model_type, preprocess, eval_set_str):
-
     # Load datasets
-    train_set = dataset.get('houses', 'train') #array of 253x14, half of the houses dataset
-    test_set = dataset.get('houses', 'test')   #array of 253x14, half of the houses dataset
+    train_set = dataset.get('houses', 'train') 
+    test_set = dataset.get('houses', 'test')   
 
     train_prices = train_set[:, numpy.shape(train_set)[1]-1]
     train_features = numpy.delete(train_set, numpy.shape(train_set)[1]-1, 1)
@@ -67,14 +66,10 @@ def trainAndTest(model_type, preprocess, eval_set_str):
     # Data preprocessing, choose the method between minmax and znorm
     if preprocess in 'minmax':
         train_features = preprocessing.min_max_scaling(train_features)
-        #train_prices = preprocessing.min_max_scaling(train_prices)
         test_features = preprocessing.min_max_scaling(test_features)
-        #test_prices = preprocessing.min_max_scaling(test_prices)
     elif preprocess == 'znorm':
         train_features = preprocessing.z_norm(train_features)
-        #train_prices = preprocessing.z_norm(train_prices)
         test_features = preprocessing.z_norm(test_features)
-        #test_prices = preprocessing.z_norm(test_prices)
     else:
         raise ValueError(
             f'Preprocessing value was not recognized: {preprocessing}')
@@ -99,3 +94,4 @@ def trainAndTest(model_type, preprocess, eval_set_str):
         RT_evaluate(model, eval_set_features, eval_set_prices)
     else:
         raise ValueError(f'Model type value was not recognized: {model_type}')
+        
