@@ -37,16 +37,14 @@ Active
 - [ ] Implement LR for boston_house_prices
 - [ ] Implement RT for boston_house_prices
 - [x] List needed packages for wine_quality in a requirement.txt
-- [ ] List needed packages for boston_house_prices in a requirement.txt
+- [x] List needed packages for boston_house_prices in a requirement.txt
 - [ ] Add License
-- [ ] Add version number badge in wine_quality README.md
-- [ ] Add version number badge in boston_house_prices README.md
 - [x] Add unit tests for utility functions
 - [x] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
 - [x] Test input parameters of preprocessing functions
 - [x] Test input parameters of dataset functions
-- [ ] Create script to run ML tasks with the command line interface
+- [x] Create script to run ML tasks with the command line interface
 - [x] Rework utils/dataset to have 3 different split of the train/test subsets
 
 ## Authors

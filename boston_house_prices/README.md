@@ -20,15 +20,11 @@ To start using these Python scripts locally, follow these simple steps.
    $ git clone https://github.com/Chxresubles/m05_miniprojects.git
    $ cd m05_miniprojects
    ```
-2. Go in the project directory
+2. Create a Python virtual environment
    ```console
-   $ cd boston_house_prices
+   $ python -m venv boston_house_prices
    ```
-3. Create a Python virtual environment
-   ```console
-   $ python -m venv wine_quality
-   ```
-4. Activate the environment<BR>
+3. Activate the environment<BR>
    For windows
    ```console
    $ boston_house_prices\Scripts\activate.bat
@@ -37,9 +33,17 @@ To start using these Python scripts locally, follow these simple steps.
    ```console
    $ source boston_house_prices/bin/activate
    ```
-5. Install the required packages
+4. Install the project
    ```console
-   $ pip install -r requirements.txt
+   $ pip install .
+   ```
+5. Run the ML algorithm
+   ```console
+   $ boston_house_prices
+   ```
+   Arguments and examples can be found by running:
+   ```console
+   $ boston_house_prices --help
    ```
 
 ## Built with

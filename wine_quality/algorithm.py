@@ -198,8 +198,8 @@ Examples:
         choices=["LR", "RT"],
         default="LR",
         help="Choose the model type to train and test."
-             "Either 'LR' for Linear Regression"
-             "or 'RT' for Regression Trees",
+             " Either 'LR' for Linear Regression"
+             " or 'RT' for Regression Trees",
     )
 
     parser.add_argument(
@@ -208,7 +208,7 @@ Examples:
         choices=["minmax", "znorm"],
         default="minmax",
         help="Choose the preprocessing to be applied on the data."
-             "Either 'minmax' or 'znorm'",
+             " Either 'minmax' or 'znorm'",
              )
 
     parser.add_argument(
@@ -217,8 +217,8 @@ Examples:
         choices=["set1", "set2", "set3"],
         default="set1",
         help="Choose the data separation (train/test)"
-             "to be applied on the dataset."
-             "Either 'set1', 'set2' or 'set3'",
+             " to be applied on the dataset."
+             " Either 'set1', 'set2' or 'set3'",
              )
 
     parser.add_argument(
@@ -227,8 +227,8 @@ Examples:
         choices=["train", "test"],
         default="test",
         help="Choose the data set to be used"
-             "for evaluation."
-             "Either 'train' or 'test'",
+             " for evaluation."
+             " Either 'train' or 'test'",
     )
 
     parser.add_argument(
@@ -237,7 +237,7 @@ Examples:
         choices=["red", "white"],
         default="red",
         help="Choose the wine color to be used."
-             "Either 'red' or 'white'",
+             " Either 'red' or 'white'",
     )
 
     parser.add_argument(
@@ -246,7 +246,7 @@ Examples:
         type=int,
         default=0,
         help="Set the number of polynomial features"
-             "to be created with the input data.",
+             " to be created with the input data.",
         )
 
     args = parser.parse_args()
