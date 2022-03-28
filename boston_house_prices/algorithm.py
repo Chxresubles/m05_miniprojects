@@ -48,10 +48,11 @@ def RT_evaluate(model, test_X, test_Y):
     MAE = analysis.MAE(prediction, test_Y)
     print(f"The mean absolute error of the model is: {MAE}\n")
 
+
 def trainAndTest(model_type, preprocess, eval_set_str):
     # Load datasets
-    train_set = dataset.get('houses', 'train') 
-    test_set = dataset.get('houses', 'test')   
+    train_set = dataset.get('houses', 'train')
+    test_set = dataset.get('houses', 'test')
 
     train_prices = train_set[:, numpy.shape(train_set)[1]-1]
     train_features = numpy.delete(train_set, numpy.shape(train_set)[1]-1, 1)
@@ -94,4 +95,3 @@ def trainAndTest(model_type, preprocess, eval_set_str):
         RT_evaluate(model, eval_set_features, eval_set_prices)
     else:
         raise ValueError(f'Model type value was not recognized: {model_type}')
-        
