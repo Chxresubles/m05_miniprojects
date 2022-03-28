@@ -54,7 +54,7 @@ def LR_evaluate(model, test_X, test_Y):
     """
     prediction = model.predict(test_X)
     MAE = analysis.MAE(prediction, test_Y)
-    print(f"The mean absolute error of the model is: {MAE}\n")
+    print(f"The mean absolute error of the model is: {MAE}")
 
 
 def RT_train(train_X, train_Y):
