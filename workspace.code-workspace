@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "boston_house_prices"
+		},
+		{
+			"path": "utils"
+		},
+		{
+			"path": "wine_quality"
+		}
+	]
+}
