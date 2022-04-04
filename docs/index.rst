@@ -1,8 +1,8 @@
 .. Wine and Houses documentation master file
 
-*******************************************
+**********************************************
 Welcome to the m05_miniprojects documentation!
-*******************************************
+**********************************************
 
 This repository holds 2 ML projects. Both projects wine_quality and boston_house_prices will perform Machine Learning tasks using 2 approaches:
 Linear Regression and Regression Trees. Each project has its own dataset included.

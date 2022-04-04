@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>wine_quality package &mdash; Wine and Houses 1.0 documentation</title>
+  <title>m05.wine_quality package &mdash; Wine and Houses 1.0.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -18,7 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="boston_house_prices package" href="boston_house_prices.html" /> 
+    <link rel="next" title="m05.utils package" href="utils.html" />
+    <link rel="prev" title="m05.boston_house_prices package" href="boston_house_prices.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,13 +40,14 @@
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">m05_miniprojects</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="boston_house_prices.html">boston_house_prices package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">wine_quality package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="boston_house_prices.html">m05.boston_house_prices package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">m05.wine_quality package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-wine_quality.algorithm">wine_quality.algorithm module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-wine_quality">Module contents</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.wine_quality.algorithm">m05.wine_quality.algorithm module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.wine_quality">Module contents</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">m05.utils package</a></li>
 </ul>
 </li>
 </ul>
@@ -65,7 +67,7 @@
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="modules.html">m05_miniprojects</a> &raquo;</li>
-      <li>wine_quality package</li>
+      <li>m05.wine_quality package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/wine_quality.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -75,13 +77,13 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="wine-quality-package">
-<h1>wine_quality package<a class="headerlink" href="#wine-quality-package" title="Permalink to this headline"></a></h1>
+  <section id="m05-wine-quality-package">
+<h1>m05.wine_quality package<a class="headerlink" href="#m05-wine-quality-package" title="Permalink to this headline"></a></h1>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
 </section>
-<section id="module-wine_quality.algorithm">
-<span id="wine-quality-algorithm-module"></span><h2>wine_quality.algorithm module<a class="headerlink" href="#module-wine_quality.algorithm" title="Permalink to this headline"></a></h2>
+<section id="module-m05.wine_quality.algorithm">
+<span id="m05-wine-quality-algorithm-module"></span><h2>m05.wine_quality.algorithm module<a class="headerlink" href="#module-m05.wine_quality.algorithm" title="Permalink to this headline"></a></h2>
 <p>ML algorithms for the wine quality dataset.</p>
 <p>This script contains two ML algorithms for
 predicting wine quality in functions of
@@ -89,82 +91,112 @@ the wine intrinsic properties:
 - Linear regression
 - Regression trees</p>
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.LR_evaluate">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">LR_evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.LR_evaluate" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.LR_evaluate">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">LR_evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.LR_evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate performance of the given Linear Regression model on the given set.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>model (model): The trained model to run the prediction on.
-test_X (ndarray): Testing set data of shape (n_samples, n_features)
-test_Y (ndarray): Testing set targets of shape (n_samples, n_targets)</p>
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>model<span class="classifier">LinearRegression object</span></dt><dd><p>The trained model to run the prediction on.</p>
+</dd>
+<dt>test_X<span class="classifier">ndarray</span></dt><dd><p>Testing set data of shape (n_samples, n_features)</p>
+</dd>
+<dt>test_Y<span class="classifier">ndarray</span></dt><dd><p>Testing set targets of shape (n_samples, n_targets)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.LR_train">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">LR_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.LR_train" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.LR_train">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">LR_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.LR_train" title="Permalink to this definition"></a></dt>
 <dd><p>Run training on the wine quality set using Linear Regression.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>train_X (ndarray): Training set data of shape (n_samples, n_features)
-train_Y (ndarray): Training set targets of shape (n_samples, n_targets)</p>
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>train_X<span class="classifier">ndarray</span></dt><dd><p>Training set data of shape (n_samples, n_features)</p>
 </dd>
-<dt>Returns:</dt><dd><p>model: Returns the trained LR model</p>
+<dt>train_Y<span class="classifier">ndarray</span></dt><dd><p>Training set targets of shape (n_samples, n_targets)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>model<span class="classifier">LinearRegression object</span></dt><dd><p>Returns the trained LR model</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.RT_evaluate">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">RT_evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.RT_evaluate" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.RT_evaluate">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">RT_evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.RT_evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>Evaluate performance of the given Regression Trees model on the given set.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>model (model): The trained model to run the prediction on.
-test_X (ndarray): Testing set data of shape (n_samples, n_features)
-test_Y (ndarray): Testing set targets of shape (n_samples, n_targets)</p>
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>model<span class="classifier">DecisionTreeClassifier object</span></dt><dd><p>The trained model to run the prediction on.</p>
+</dd>
+<dt>test_X<span class="classifier">ndarray</span></dt><dd><p>Testing set data of shape (n_samples, n_features)</p>
+</dd>
+<dt>test_Y<span class="classifier">ndarray</span></dt><dd><p>Testing set targets of shape (n_samples, n_targets)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.RT_train">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">RT_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.RT_train" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.RT_train">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">RT_train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">train_X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_Y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.RT_train" title="Permalink to this definition"></a></dt>
 <dd><p>Run training on the wine quality set using Regression Trees.</p>
 <dl class="simple">
-<dt>Args:</dt><dd><p>train_X (ndarray): Training set data of shape (n_samples, n_features)
-train_Y (ndarray): Training set targets of shape (n_samples, n_targets)</p>
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>train_X<span class="classifier">ndarray</span></dt><dd><p>Training set data of shape (n_samples, n_features)</p>
 </dd>
-<dt>Returns:</dt><dd><p>model: Returns the trained RT model</p>
+<dt>train_Y<span class="classifier">ndarray</span></dt><dd><p>Training set targets of shape (n_samples, n_targets)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>model<span class="classifier">DecisionTreeClassifier object</span></dt><dd><p>Returns the trained RT model</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.main">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.main" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.main">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.main" title="Permalink to this definition"></a></dt>
 <dd><p>Main function to be called from the command-line</p>
 </dd></dl>
 
 <dl class="py function">
-<dt class="sig sig-object py" id="wine_quality.algorithm.trainAndTest">
-<span class="sig-prename descclassname"><span class="pre">wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">trainAndTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_set_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wine_quality.algorithm.trainAndTest" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="m05.wine_quality.algorithm.trainAndTest">
+<span class="sig-prename descclassname"><span class="pre">m05.wine_quality.algorithm.</span></span><span class="sig-name descname"><span class="pre">trainAndTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_set_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">color</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.wine_quality.algorithm.trainAndTest" title="Permalink to this definition"></a></dt>
 <dd><p>Run training and testing on the chosen wine quality set using the wanted model type.</p>
-<dl>
-<dt>Args:</dt><dd><p>model_type (string): The model type to use (Can be either ‘LR’ or ‘RT’)
-preprocess (string): The preprocessing function to use (Can be either ‘minmax’ or ‘znorm’)
-subset (string): The set of train/test data to use
-eval_set_str (string): The set to use for evaluation (Can be either ‘train’ or ‘test’)
-color (string): The color of the wine (Can be either ‘red’ or ‘white’)
-poly (int): the maximal degree of the new polynomial features</p>
-<blockquote>
-<div><p>(Call with 0 or 1 to not generate new polynomial features)</p>
-</div></blockquote>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>model_type<span class="classifier">string</span></dt><dd><p>The model type to use (Can be either ‘LR’ or ‘RT’)</p>
+</dd>
+<dt>preprocess<span class="classifier">string</span></dt><dd><p>The preprocessing function to use (Can be either ‘minmax’ or ‘znorm’)</p>
+</dd>
+<dt>subset<span class="classifier">string</span></dt><dd><p>The set of train/test data to use</p>
+</dd>
+<dt>eval_set_str<span class="classifier">string</span></dt><dd><p>The set to use for evaluation (Can be either ‘train’ or ‘test’)</p>
+</dd>
+<dt>color<span class="classifier">string</span></dt><dd><p>The color of the wine (Can be either ‘red’ or ‘white’)</p>
+</dd>
+<dt>poly<span class="classifier">int</span></dt><dd><p>The maximal degree of the new polynomial features
+(Call with 0 or 1 to not generate new polynomial features)</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>
 
 </section>
-<section id="module-wine_quality">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-wine_quality" title="Permalink to this headline"></a></h2>
+<section id="module-m05.wine_quality">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-m05.wine_quality" title="Permalink to this headline"></a></h2>
 <p>Init file for wine_quality folder.</p>
 </section>
 </section>
@@ -173,7 +205,8 @@ poly (int): the maximal degree of the new polynomial features</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="boston_house_prices.html" class="btn btn-neutral float-left" title="boston_house_prices package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="boston_house_prices.html" class="btn btn-neutral float-left" title="m05.boston_house_prices package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="utils.html" class="btn btn-neutral float-right" title="m05.utils package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

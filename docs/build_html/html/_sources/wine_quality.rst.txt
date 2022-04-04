@@ -1,13 +1,13 @@
-wine\_quality package
-=====================
+m05.wine\_quality package
+=========================
 
 Submodules
 ----------
 
-wine\_quality.algorithm module
-------------------------------
+m05.wine\_quality.algorithm module
+----------------------------------
 
-.. automodule:: wine_quality.algorithm
+.. automodule:: m05.wine_quality.algorithm
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ wine\_quality.algorithm module
 Module contents
 ---------------
 
-.. automodule:: wine_quality
+.. automodule:: m05.wine_quality
    :members:
    :undoc-members:
    :show-inheritance:

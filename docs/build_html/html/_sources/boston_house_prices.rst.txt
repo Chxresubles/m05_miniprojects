@@ -1,13 +1,13 @@
-boston\_house\_prices package
-=============================
+m05.boston\_house\_prices package
+=================================
 
 Submodules
 ----------
 
-boston\_house\_prices.algorithm module
---------------------------------------
+m05.boston\_house\_prices.algorithm module
+------------------------------------------
 
-.. automodule:: boston_house_prices.algorithm
+.. automodule:: m05.boston_house_prices.algorithm
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ boston\_house\_prices.algorithm module
 Module contents
 ---------------
 
-.. automodule:: boston_house_prices
+.. automodule:: m05.boston_house_prices
    :members:
    :undoc-members:
    :show-inheritance:
