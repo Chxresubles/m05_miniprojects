@@ -14,7 +14,7 @@ setup(
     version="1.0.0",
     description="Basic example of a Reproducible Research Project in Python for the M05 course",
     url="https://github.com/Chxresubles/m05_miniprojects",
-    license="BSD",
+    license="BSD-2",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     packages=find_packages(),
