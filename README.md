@@ -37,8 +37,11 @@ Active
 - [ ] Implement LR for boston_house_prices
 - [ ] Implement RT for boston_house_prices
 - [x] List needed packages for wine_quality in a requirement.txt
-- [x] List needed packages for boston_house_prices in a requirement.txt
-- [ ] Add License
+
+- [ ] List needed packages for boston_house_prices in a requirement.txt
+- [x] Add License
+- [ ] Add version number badge in wine_quality README.md
+- [ ] Add version number badge in boston_house_prices README.md
 - [x] Add unit tests for utility functions
 - [x] Add unit tests for wine_quality functions
 - [ ] Add unit tests for boston_house_prices functions
