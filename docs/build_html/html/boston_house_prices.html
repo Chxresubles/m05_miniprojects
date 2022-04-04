@@ -141,8 +141,14 @@ train_Y (ndarray): Training set targets of shape (n_samples, n_targets)</p>
 </dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="boston_house_prices.algorithm.main">
+<span class="sig-prename descclassname"><span class="pre">boston_house_prices.algorithm.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#boston_house_prices.algorithm.main" title="Permalink to this definition"></a></dt>
+<dd><p>Main function to be called from the command-line</p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="boston_house_prices.algorithm.trainAndTest">
-<span class="sig-prename descclassname"><span class="pre">boston_house_prices.algorithm.</span></span><span class="sig-name descname"><span class="pre">trainAndTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_set_str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boston_house_prices.algorithm.trainAndTest" title="Permalink to this definition"></a></dt>
+<span class="sig-prename descclassname"><span class="pre">boston_house_prices.algorithm.</span></span><span class="sig-name descname"><span class="pre">trainAndTest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">preprocess</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eval_set_str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">poly</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#boston_house_prices.algorithm.trainAndTest" title="Permalink to this definition"></a></dt>
 <dd><p>Run training and testing on the chosen wine quality set using the wanted model type.</p>
 <dl>
 <dt>Args:</dt><dd><p>model_type (string): The model type to use (Can be either ‘LR’ or ‘RT’)
