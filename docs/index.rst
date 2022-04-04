@@ -72,7 +72,7 @@ Installation
 * Install the m05_miniprojects package
    .. code-block::
 
-          $ pip install m05
+          $ pip install .
 
 * Run the ML algorithm
    .. code-block::
