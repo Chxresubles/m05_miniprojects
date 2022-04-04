@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Wine and Houses’s documentation! &mdash; Wine and Houses 1.0 documentation</title>
+  <title>Welcome to the m05_miniprojects documentation! &mdash; Wine and Houses 0.2.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -55,7 +55,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="#" class="icon icon-home"></a> &raquo;</li>
-      <li>Welcome to Wine and Houses’s documentation!</li>
+      <li>Welcome to the m05_miniprojects documentation!</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -65,22 +65,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-wine-and-houses-s-documentation">
-<h1>Welcome to Wine and Houses’s documentation!<a class="headerlink" href="#welcome-to-wine-and-houses-s-documentation" title="Permalink to this headline"></a></h1>
+  <section id="welcome-to-the-m05-miniprojects-documentation">
+<h1>Welcome to the m05_miniprojects documentation!<a class="headerlink" href="#welcome-to-the-m05-miniprojects-documentation" title="Permalink to this headline"></a></h1>
 <p>This repository holds 2 ML projects. Both projects wine_quality and boston_house_prices will perform Machine Learning tasks using 2 approaches:
 Linear Regression and Regression Trees. Each project has its own dataset included.</p>
 <section id="wine-quality-boston-house-prices">
 <h2>Wine Quality &amp; Boston House prices<a class="headerlink" href="#wine-quality-boston-house-prices" title="Permalink to this headline"></a></h2>
-<p>This project is used to determe of the quality of a wine from their intrinsic properties.
-P.S. For boston house price you can follow the same steps.</p>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h3>
-<p>This project will determine the quality of a wine using 2 approaches: Linear Regression and Regression Trees.</p>
+<p>The wine_quality project is used to determine of the quality of a wine from their intrinsic properties.</p>
+<p>The boston_house_prices project is used to predict the price of a house in Boston from their features.</p>
 </section>
 <section id="data-sets">
 <h3>Data sets<a class="headerlink" href="#data-sets" title="Permalink to this headline"></a></h3>
-<p>Both the red and white wine data sets were retrieved from the UCI Machine Learning Repository that can be found here :
-<a class="reference external" href="https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/">https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/</a></p>
+<p>Both the red and white wine data sets were retrieved from the UCI Machine Learning Repository that can be found here :</p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/">https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/</a></p>
+<p>The Boston houses data sets were retrieved from the UCI Machine Learning Repository that can be found here :</p>
+<p><a class="reference external" href="https://archive.ics.uci.edu/ml/machine-learning-databases/housing/">https://archive.ics.uci.edu/ml/machine-learning-databases/housing/</a></p>
 </section>
 <section id="prerequisites">
 <h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline"></a></h3>
@@ -109,7 +110,7 @@ $ cd m05_miniprojects
 </dl>
 </li>
 <li><dl>
-<dt>Create a Python virtual environment</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m venv wine_quality
+<dt>Create a Python virtual environment</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python -m venv m05_group3
 </pre></div>
 </div>
 </dd>
@@ -119,14 +120,14 @@ $ cd m05_miniprojects
 <blockquote>
 <div><ul>
 <li><dl>
-<dt>For windows</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wine_quality\Scripts\activate.bat
+<dt>For windows</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ m05_group3\Scripts\activate.bat
 </pre></div>
 </div>
 </dd>
 </dl>
 </li>
 <li><dl>
-<dt>For POSIX</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ source wine_quality/bin/activate
+<dt>For POSIX</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ source m05_group3/bin/activate
 </pre></div>
 </div>
 </dd>
@@ -142,14 +143,38 @@ $ cd m05_miniprojects
 </dd>
 </dl>
 </li>
+<li><dl>
+<dt>Install the m05_miniprojects package</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pip install .
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Run the ML algorithm</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wine_quality
+$ boston_house_prices
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Arguments and examples can be found by running:</dt><dd><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ wine_quality --help
+$ boston_house_prices --help
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
 </ul>
 <hr class="docutils" />
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="modules.html">m05_miniprojects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="boston_house_prices.html">boston_house_prices package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="wine_quality.html">wine_quality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="boston_house_prices.html">m05.boston_house_prices package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wine_quality.html">m05.wine_quality package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utils.html">m05.utils package</a></li>
 </ul>
 </li>
 </ul>

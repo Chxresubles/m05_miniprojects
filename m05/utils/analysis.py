@@ -28,12 +28,15 @@ import numpy as np
 def MAE(prediction, ground_truth):
     """Calculate the mean absolute error for the predictions compared to the ground truth.
 
-    Args:
-        prediction (ndarray): array that contains the predictions
-        ground_truth (ndarray): array that contains the ground_truth
+    Parameters:
+        prediction : ndarray
+            Array that contains the predictions
+        ground_truth : ndarray
+            Array that contains the ground_truth
 
     Returns:
-        float: returns the Mean Absolute Error
+        MAE : float
+            Returns the Mean Absolute Error
     """
 
     if not isinstance(prediction, np.ndarray):

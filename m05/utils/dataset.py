@@ -89,11 +89,13 @@ HOUSE_FILE_PATH = os.path.join(os.path.dirname(
 def load_dataset(dataset):
     """Load the wanted dataset in a numpy array
 
-    Args:
-        dataset (string): name of the wanted dataset
+    Parameters:
+        dataset : string
+            Name of the wanted dataset
 
     Returns:
-        array: contains the wanted dataset
+        dataset : ndarray
+            Contains the wanted dataset
     """
     if not isinstance(dataset, str):
         raise TypeError('dataset must be a string')
@@ -126,12 +128,15 @@ def load_dataset(dataset):
 def load(reader, skip_first_line):
     """Load the content of the reader in a numpy array
 
-    Args:
-        reader (ReaderObject): Read a file data
-        skip_first_line (boolean): skip first line or not
+    Parameters:
+        reader : ReaderObject
+            CSV reader object to read a file data
+        skip_first_line : boolean
+            Skip first line or not
 
     Returns:
-        ndarray: array that contains the data
+        data : ndarray
+            Array that contains the data
     """
     if not isinstance(skip_first_line, bool):
         raise TypeError('skip_first_line must be a bool')
@@ -148,13 +153,17 @@ def load(reader, skip_first_line):
 def split_data(data, subset, splits):
     """Get the wanted subset from the data as numpy array
 
-    Args:
-        data (ndarray): contains the data
-        subset (string): the wanted subset from the list SUBSETS
-        splits (dict): the dict containing the list of subset and its random_state
+    Parameters:
+        data : ndarray
+            Contains the data
+        subset : string
+            The wanted subset from the list SUBSETS
+        splits : dict
+            The dict containing the list of subset and its random_state
 
     Returns:
-        (ndarray,ndarray): data split into (data_train, data_test)
+        data dict : (ndarray, ndarray)
+            Data split into (data_train, data_test)
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')
@@ -171,13 +180,17 @@ def split_data(data, subset, splits):
 def get(protocol, subset, part):
     """Retrieve the wanted data subset as two numpy arrays X and Y
 
-    Args:
-        protocol (string): which protocol we want to use (red, white, houses)
-        subset (string): the wanted subset from the list SUBSETS
-        part (string): the wanted part (either 'train' or 'test')
+    Parameters:
+        protocol : string
+            Which protocol we want to use from PROTOCOLS (red, white, houses)
+        subset : string
+            The wanted subset from the list SUBSETS
+        part : string
+            The wanted part (either 'train' or 'test')
 
     Returns:
-        (ndarray,ndarray): two array X and Y
+        data dict : (ndarray, ndarray)
+            Two array X and Y
     """
     if not isinstance(protocol, str):
         raise TypeError('protocol must be a str')

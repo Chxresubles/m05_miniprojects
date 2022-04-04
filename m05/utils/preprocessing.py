@@ -30,11 +30,13 @@ import numpy as np
 def estimate_norm(data):
     """Estimates the mean and the std of the data
 
-    Args:
-        data (ndarray): array that contains the data
+    Parameters:
+        data : ndarray
+            Numpy array that contains the data
 
     Returns:
-        (float,float): mean and std of the data
+        mean_and_std : (float, float)
+            Mean and std of the data
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')
@@ -45,11 +47,13 @@ def estimate_norm(data):
 def min_max_scaling(data):
     """Min max scaling of the data
 
-    Args:
-        data (ndarray): array that contains the data
+    Parameters:
+        data : ndarray
+            Numpy array that contains the data
 
     Returns:
-        ndarray: scaled array (value from 0 to 1)
+        arr : ndarray
+            Scaled array (value from 0 to 1)
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')
@@ -61,11 +65,13 @@ def min_max_scaling(data):
 def z_norm(data):
     """Z normalisation of the data
 
-    Args:
-        data (ndarray): array that contains the data
+    Parameters:
+        data : ndarray
+            Numpy array that contains the data
 
     Returns:
-        ndarray: normalized array
+        arr : ndarray
+            Normalized array
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')
@@ -77,13 +83,16 @@ def z_norm(data):
 def poly(data, degree):
     """Generate polynomial features from the data
 
-    Args:
-        data (ndarray): array that contains the data
-        degree (int): the maximal degree of the polynomial features
+    Parameters:
+        data : ndarray
+            Numpy array that contains the data
+        degree : int
+            The maximal degree of the polynomial features
 
     Returns:
-        ndarray: new feature matrix consisting of all polynomial combinations
-        of the features with degree less than or equal to the specified degree
+        polys : ndarray
+            New feature matrix consisting of all polynomial combinations
+            of the features with degree less than or equal to the specified degree
     """
     if not isinstance(data, np.ndarray):
         raise TypeError('data must be a numpy array')

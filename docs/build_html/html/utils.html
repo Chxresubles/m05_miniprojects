@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>m05.utils package &mdash; Wine and Houses 0.2.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="m05.wine_quality package" href="wine_quality.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Wine and Houses
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">m05_miniprojects</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="boston_house_prices.html">m05.boston_house_prices package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="wine_quality.html">m05.wine_quality package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">m05.utils package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.utils.analysis">m05.utils.analysis module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.utils.dataset">m05.utils.dataset module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.utils.preprocessing">m05.utils.preprocessing module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-m05.utils">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Wine and Houses</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="modules.html">m05_miniprojects</a> &raquo;</li>
+      <li>m05.utils package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="m05-utils-package">
+<h1>m05.utils package<a class="headerlink" href="#m05-utils-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-m05.utils.analysis">
+<span id="m05-utils-analysis-module"></span><h2>m05.utils.analysis module<a class="headerlink" href="#module-m05.utils.analysis" title="Permalink to this headline"></a></h2>
+<p>Utility functions for the result analysis.</p>
+<p>This file contains utility functions for
+the calculations of metrics for the
+ML algorithms need for result analysis.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.analysis.MAE">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.analysis.</span></span><span class="sig-name descname"><span class="pre">MAE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prediction</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ground_truth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.analysis.MAE" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the mean absolute error for the predictions compared to the ground truth.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>prediction<span class="classifier">ndarray</span></dt><dd><p>Array that contains the predictions</p>
+</dd>
+<dt>ground_truth<span class="classifier">ndarray</span></dt><dd><p>Array that contains the ground_truth</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>MAE<span class="classifier">float</span></dt><dd><p>Returns the Mean Absolute Error</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-m05.utils.dataset">
+<span id="m05-utils-dataset-module"></span><h2>m05.utils.dataset module<a class="headerlink" href="#module-m05.utils.dataset" title="Permalink to this headline"></a></h2>
+<p>Utility functions for the handling of the datasets.</p>
+<p>This file was given with the course materials for the ex3
+of the module M05 of the AI master at Idiap. Small
+modifications were done to fit the file with our needs
+for this mini-project.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.dataset.get">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.dataset.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">protocol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">part</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.dataset.get" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the wanted data subset as two numpy arrays X and Y</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>protocol<span class="classifier">string</span></dt><dd><p>Which protocol we want to use from PROTOCOLS (red, white, houses)</p>
+</dd>
+<dt>subset<span class="classifier">string</span></dt><dd><p>The wanted subset from the list SUBSETS</p>
+</dd>
+<dt>part<span class="classifier">string</span></dt><dd><p>The wanted part (either ‘train’ or ‘test’)</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>data dict<span class="classifier">(ndarray, ndarray)</span></dt><dd><p>Two array X and Y</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.dataset.load">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.dataset.</span></span><span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reader</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">skip_first_line</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.dataset.load" title="Permalink to this definition"></a></dt>
+<dd><p>Load the content of the reader in a numpy array</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>reader<span class="classifier">ReaderObject</span></dt><dd><p>CSV reader object to read a file data</p>
+</dd>
+<dt>skip_first_line<span class="classifier">boolean</span></dt><dd><p>Skip first line or not</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Array that contains the data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.dataset.load_dataset">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.dataset.</span></span><span class="sig-name descname"><span class="pre">load_dataset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.dataset.load_dataset" title="Permalink to this definition"></a></dt>
+<dd><p>Load the wanted dataset in a numpy array</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>dataset<span class="classifier">string</span></dt><dd><p>Name of the wanted dataset</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>dataset<span class="classifier">ndarray</span></dt><dd><p>Contains the wanted dataset</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.dataset.split_data">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.dataset.</span></span><span class="sig-name descname"><span class="pre">split_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">subset</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">splits</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.dataset.split_data" title="Permalink to this definition"></a></dt>
+<dd><p>Get the wanted subset from the data as numpy array</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Contains the data</p>
+</dd>
+<dt>subset<span class="classifier">string</span></dt><dd><p>The wanted subset from the list SUBSETS</p>
+</dd>
+<dt>splits<span class="classifier">dict</span></dt><dd><p>The dict containing the list of subset and its random_state</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>data dict<span class="classifier">(ndarray, ndarray)</span></dt><dd><p>Data split into (data_train, data_test)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-m05.utils.preprocessing">
+<span id="m05-utils-preprocessing-module"></span><h2>m05.utils.preprocessing module<a class="headerlink" href="#module-m05.utils.preprocessing" title="Permalink to this headline"></a></h2>
+<p>Preprocessing functions for the wine quality ML project.</p>
+<p>This file was given with the course materials for the ex3
+of the module M05 of the AI master at Idiap. Small
+modifications were done to fit the file with our needs
+for this mini-project.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.preprocessing.estimate_norm">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.preprocessing.</span></span><span class="sig-name descname"><span class="pre">estimate_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.preprocessing.estimate_norm" title="Permalink to this definition"></a></dt>
+<dd><p>Estimates the mean and the std of the data</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Numpy array that contains the data</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>mean_and_std<span class="classifier">(float, float)</span></dt><dd><p>Mean and std of the data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.preprocessing.min_max_scaling">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.preprocessing.</span></span><span class="sig-name descname"><span class="pre">min_max_scaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.preprocessing.min_max_scaling" title="Permalink to this definition"></a></dt>
+<dd><p>Min max scaling of the data</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Numpy array that contains the data</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>arr<span class="classifier">ndarray</span></dt><dd><p>Scaled array (value from 0 to 1)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.preprocessing.poly">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.preprocessing.</span></span><span class="sig-name descname"><span class="pre">poly</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">degree</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.preprocessing.poly" title="Permalink to this definition"></a></dt>
+<dd><p>Generate polynomial features from the data</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Numpy array that contains the data</p>
+</dd>
+<dt>degree<span class="classifier">int</span></dt><dd><p>The maximal degree of the polynomial features</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>polys<span class="classifier">ndarray</span></dt><dd><p>New feature matrix consisting of all polynomial combinations
+of the features with degree less than or equal to the specified degree</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="m05.utils.preprocessing.z_norm">
+<span class="sig-prename descclassname"><span class="pre">m05.utils.preprocessing.</span></span><span class="sig-name descname"><span class="pre">z_norm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#m05.utils.preprocessing.z_norm" title="Permalink to this definition"></a></dt>
+<dd><p>Z normalisation of the data</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><dl class="simple">
+<dt>data<span class="classifier">ndarray</span></dt><dd><p>Numpy array that contains the data</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>arr<span class="classifier">ndarray</span></dt><dd><p>Normalized array</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-m05.utils">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-m05.utils" title="Permalink to this headline"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="wine_quality.html" class="btn btn-neutral float-left" title="m05.wine_quality package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Sierro Romain &amp; Favre Lenny &amp; Khalil Mohamed.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

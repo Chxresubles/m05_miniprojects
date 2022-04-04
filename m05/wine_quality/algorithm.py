@@ -17,7 +17,7 @@ the wine intrinsic properties:
 
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeClassifier
-from utils import dataset, preprocessing, analysis
+from m05.utils import dataset, preprocessing, analysis
 
 
 # ============================================================================================================
@@ -32,12 +32,15 @@ from utils import dataset, preprocessing, analysis
 def LR_train(train_X, train_Y):
     """Run training on the wine quality set using Linear Regression.
 
-    Args:
-        train_X (ndarray): Training set data of shape (n_samples, n_features)
-        train_Y (ndarray): Training set targets of shape (n_samples, n_targets)
+    Parameters:
+        train_X : ndarray
+            Training set data of shape (n_samples, n_features)
+        train_Y : ndarray
+            Training set targets of shape (n_samples, n_targets)
 
     Returns:
-        model: Returns the trained LR model
+        model : LinearRegression object
+            Returns the trained LR model
     """
     lin_model = LinearRegression()
     lin_model.fit(train_X, train_Y)
@@ -47,10 +50,13 @@ def LR_train(train_X, train_Y):
 def LR_evaluate(model, test_X, test_Y):
     """Evaluate performance of the given Linear Regression model on the given set.
 
-    Args:
-        model (model): The trained model to run the prediction on.
-        test_X (ndarray): Testing set data of shape (n_samples, n_features)
-        test_Y (ndarray): Testing set targets of shape (n_samples, n_targets)
+    Parameters:
+        model : LinearRegression object
+            The trained model to run the prediction on.
+        test_X : ndarray
+            Testing set data of shape (n_samples, n_features)
+        test_Y : ndarray
+            Testing set targets of shape (n_samples, n_targets)
     """
     prediction = model.predict(test_X)
     MAE = analysis.MAE(prediction, test_Y)
@@ -60,12 +66,15 @@ def LR_evaluate(model, test_X, test_Y):
 def RT_train(train_X, train_Y):
     """Run training on the wine quality set using Regression Trees.
 
-    Args:
-        train_X (ndarray): Training set data of shape (n_samples, n_features)
-        train_Y (ndarray): Training set targets of shape (n_samples, n_targets)
+    Parameters:
+        train_X : ndarray
+            Training set data of shape (n_samples, n_features)
+        train_Y : ndarray
+            Training set targets of shape (n_samples, n_targets)
 
     Returns:
-        model: Returns the trained RT model
+        model : DecisionTreeClassifier object
+            Returns the trained RT model
     """
     reg_model = DecisionTreeClassifier(random_state=0)
     reg_model.fit(train_X, train_Y)
@@ -75,10 +84,13 @@ def RT_train(train_X, train_Y):
 def RT_evaluate(model, test_X, test_Y):
     """Evaluate performance of the given Regression Trees model on the given set.
 
-    Args:
-        model (model): The trained model to run the prediction on.
-        test_X (ndarray): Testing set data of shape (n_samples, n_features)
-        test_Y (ndarray): Testing set targets of shape (n_samples, n_targets)
+    Parameters:
+        model : DecisionTreeClassifier object
+            The trained model to run the prediction on.
+        test_X : ndarray
+            Testing set data of shape (n_samples, n_features)
+        test_Y : ndarray
+            Testing set targets of shape (n_samples, n_targets)
     """
     prediction = model.predict(test_X).reshape(-1, 1)
     MAE = analysis.MAE(prediction, test_Y)
@@ -88,14 +100,20 @@ def RT_evaluate(model, test_X, test_Y):
 def trainAndTest(model_type, preprocess, subset, eval_set_str, color, poly):
     """Run training and testing on the chosen wine quality set using the wanted model type.
 
-    Args:
-        model_type (string): The model type to use (Can be either 'LR' or 'RT')
-        preprocess (string): The preprocessing function to use (Can be either 'minmax' or 'znorm')
-        subset (string): The set of train/test data to use
-        eval_set_str (string): The set to use for evaluation (Can be either 'train' or 'test')
-        color (string): The color of the wine (Can be either 'red' or 'white')
-        poly (int): the maximal degree of the new polynomial features
-                    (Call with 0 or 1 to not generate new polynomial features)
+    Parameters:
+        model_type : string
+            The model type to use (Can be either 'LR' or 'RT')
+        preprocess : string
+            The preprocessing function to use (Can be either 'minmax' or 'znorm')
+        subset : string
+            The set of train/test data to use
+        eval_set_str : string
+            The set to use for evaluation (Can be either 'train' or 'test')
+        color : string
+            The color of the wine (Can be either 'red' or 'white')
+        poly : int
+            The maximal degree of the new polynomial features
+            (Call with 0 or 1 to not generate new polynomial features)
     """
     if color not in ['red', 'white']:
         raise ValueError(f'Color value was not recognized: {color}')
