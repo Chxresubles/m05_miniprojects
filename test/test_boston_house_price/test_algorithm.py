@@ -83,6 +83,7 @@ def test_trainAndTest_model():
     """Check that the trainAndTest function works
     """
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 1)
+    algorithm.trainAndTest('RT', 'minmax', 'set1', 'train', 1)
     with pytest.raises(ValueError):
         algorithm.trainAndTest('random_model', 'minmax',
                                'set1', 'train', 1)

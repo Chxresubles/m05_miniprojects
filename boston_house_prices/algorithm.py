@@ -13,7 +13,7 @@ depending of the first 13 variables rows. For the prediciton we will use
 # ============================================================================================================
 import numpy
 from sklearn.linear_model import LinearRegression
-from sklearn.tree import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeRegressor
 from utils import dataset, preprocessing, analysis
 
 # ============================================================================================================
@@ -38,7 +38,7 @@ def LR_evaluate(model, test_X, test_Y):
 
 
 def RT_train(train_X, train_Y):
-    reg_model = DecisionTreeClassifier(random_state=0)
+    reg_model = DecisionTreeRegressor(random_state=0)
     reg_model.fit(train_X, train_Y)
     return reg_model
 
