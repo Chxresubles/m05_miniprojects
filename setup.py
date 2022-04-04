@@ -11,7 +11,7 @@ def load_requirements(f):
 
 setup(
     name="m05-gr03-2022",
-    version="1.0.0",
+    version=open("VERSION").read(),
     description="Basic example of a Reproducible Research Project in Python for the M05 course",
     url="https://github.com/Chxresubles/m05_miniprojects",
     license="BSD-2",
@@ -20,8 +20,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
-    entry_points={"console_scripts": ["wine_quality = wine_quality.algorithm:main",
-                                      "boston_house_prices = boston_house_prices.algorithm:main"]},
+    entry_points={"console_scripts": ["wine_quality = m05.wine_quality.algorithm:main",
+                                      "boston_house_prices = m05.boston_house_prices.algorithm:main"]},
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",

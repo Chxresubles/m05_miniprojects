@@ -18,6 +18,8 @@ To run these scripts, you must have [Python](https://www.python.org/) installed.
 * [pytest](https://docs.pytest.org/)
 * [flake8](https://flake8.pycqa.org/en/latest/)
 * [pydocstyle](http://www.pydocstyle.org/en/stable/)
+* [numpy](https://numpy.org/)
+* [scikit-learn](https://scikit-learn.org/)
 
 ## Acknowledgement
 Special thanks to all members of this project for their work and to all teaching staff of the M05 module for their support.
