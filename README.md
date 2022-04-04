@@ -26,7 +26,7 @@ Special thanks to all members of this project for their work and to all teaching
 Active
 
 ## Development
-[Documentation](docs/_build/html/index.html)
+[Documentation](docs/build_html/html/index.html)
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
