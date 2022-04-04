@@ -20,7 +20,8 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     install_requires=load_requirements("requirements.txt"),
-    entry_points={"console_scripts": ["wine_quality = wine_quality.algorithm:main"]},
+    entry_points={"console_scripts": ["wine_quality = wine_quality.algorithm:main",
+                                      "boston_house_prices = boston_house_prices.algorithm:main"]},
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
