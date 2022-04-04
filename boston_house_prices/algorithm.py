@@ -148,3 +148,83 @@ def trainAndTest(model_type, preprocess, subset, eval_set_str, poly):
         RT_evaluate(model, eval_set_features, eval_set_prices)
     else:
         raise ValueError(f'Model type value was not recognized: {model_type}')
+
+
+def main():
+    """Main function to be called from the command-line"""
+
+    import argparse
+
+    example_doc = """\
+Examples:
+    1. Train a Linear Regression algorithm
+       and test it on the test set:
+       $ boston_house_prices --model LR --evalset test
+    2. Train a Regression Tree algorithm
+       and test it on the train set:
+       $ boston_house_prices --model RT --evalset train
+    3. Train a Linear Regression algorithm using z-normalisation
+       and by creating 2-degree polynomial features
+       and test it on the test set:
+       $ boston_house_prices --model LR --preprocess znorm --subset set1 --evalset test --poly 2
+    """
+
+    parser = argparse.ArgumentParser(
+        usage="%(prog)s [options]",
+        description="Train and test the wanted ML algorithm on the boston house prices dataset",
+        epilog=example_doc,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+
+    parser.add_argument(
+        "-m",
+        "--model",
+        choices=["LR", "RT"],
+        default="LR",
+        help="Choose the model type to train and test."
+             " Either 'LR' for Linear Regression"
+             " or 'RT' for Regression Trees",
+    )
+
+    parser.add_argument(
+        "-p",
+        "--preprocess",
+        choices=["minmax", "znorm"],
+        default="minmax",
+        help="Choose the preprocessing to be applied on the data."
+             " Either 'minmax' or 'znorm'",
+             )
+
+    parser.add_argument(
+        "-s",
+        "--subset",
+        choices=["set1", "set2", "set3"],
+        default="set1",
+        help="Choose the data separation (train/test)"
+             " to be applied on the dataset."
+             " Either 'set1', 'set2' or 'set3'",
+             )
+
+    parser.add_argument(
+        "-e",
+        "--evalset",
+        choices=["train", "test"],
+        default="test",
+        help="Choose the data set to be used"
+             " for evaluation."
+             " Either 'train' or 'test'",
+    )
+
+    parser.add_argument(
+        "-n",
+        "--poly",
+        type=int,
+        default=0,
+        help="Set the number of polynomial features"
+             " to be created with the input data.",
+        )
+
+    args = parser.parse_args()
+
+    # Run the script with the input arguments
+    trainAndTest(args.model, args.preprocess, args.subset, args.evalset, args.poly)

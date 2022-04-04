@@ -80,7 +80,7 @@ def test_RT_evaluate():
 
 
 def test_trainAndTest_model():
-    """Check that the trainAndTest function works
+    """Check that the trainAndTest function works with both LR and RT model.
     """
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 1)
     algorithm.trainAndTest('RT', 'minmax', 'set1', 'train', 1)
@@ -90,7 +90,7 @@ def test_trainAndTest_model():
 
 
 def test_trainAndTest_norm():
-    """Check that the trainAndTest function works.
+    """Check that the trainAndTest function works with both data normalisation.
     """
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 1)
     algorithm.trainAndTest('LR', 'znorm', 'set1', 'train', 1)
@@ -99,7 +99,7 @@ def test_trainAndTest_norm():
 
 
 def test_trainAndTest_evalSet():
-    """Check that the trainAndTest function works.
+    """Check that the trainAndTest function works with both train and test sets.
     """
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 1)
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'test', 1)
@@ -108,7 +108,7 @@ def test_trainAndTest_evalSet():
 
 
 def test_trainAndTest_poly():
-    """Check that the trainAndTest function works with both.
+    """Check that the trainAndTest function works with multiple polynomial degrees.
     """
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 0)
     algorithm.trainAndTest('LR', 'minmax', 'set1', 'train', 1)
