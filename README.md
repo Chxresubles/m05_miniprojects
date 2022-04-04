@@ -26,7 +26,7 @@ Special thanks to all members of this project for their work and to all teaching
 Active
 
 ## Development
-[Documentation](docs/build_html/html/index.html)
+[Documentation](https://htmlpreview.github.io/?https://github.com/Chxresubles/m05_miniprojects/blob/master/docs/build_html/html/index.html)
 
 ## Authors
 * [Khalil Mohamed](https://github.com/Khalil-Mo)
