@@ -49,20 +49,27 @@ def RT_evaluate(model, test_X, test_Y):
     print(f"The mean absolute error of the model is: {MAE}\n")
 
 
-def trainAndTest(model_type, preprocess, eval_set_str):
+def trainAndTest(model_type, preprocess, subset, eval_set_str, poly):
     # Load datasets
-    train_set = dataset.get('houses', 'train')
-    test_set = dataset.get('houses', 'test')
+    train_set = dataset.get('houses', subset, 'train')
+    test_set = dataset.get('houses', subset, 'test')
 
-    train_prices = train_set[:, numpy.shape(train_set)[1]-1]
-    train_features = numpy.delete(train_set, numpy.shape(train_set)[1]-1, 1)
-    test_prices = test_set[:, numpy.shape(test_set)[1]-1]
-    test_features = numpy.delete(test_set, numpy.shape(test_set)[1]-1, 1)
+    train_prices = train_set[1]
+    train_features = train_set[0]
+    test_prices = test_set[1]
+    test_features = test_set[0]
 
     print(numpy.shape(train_prices))
     print(numpy.shape(train_features))
     print(numpy.shape(test_prices))
     print(numpy.shape(test_features))
+
+    if poly > 1:
+        print(f'Generating polynomial features with degree {poly}...')
+        train_features = preprocessing.poly(train_features, poly)
+        test_features = preprocessing.poly(test_features, poly)
+        print('Done')
+        print('')
 
     # Data preprocessing, choose the method between minmax and znorm
     if preprocess in 'minmax':
