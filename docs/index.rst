@@ -42,11 +42,6 @@ Installation
           $ git clone https://github.com/Chxresubles/m05_miniprojects.git
           $ cd m05_miniprojects
 
-* Go in the project directory
-   .. code-block::
-
-          $ cd wine_quality
-
 * Create a Python virtual environment
    .. code-block::
 
@@ -63,11 +58,6 @@ Installation
       .. code-block::
 
           $ source m05_group3/bin/activate
-
-* Install the required packages
-   .. code-block::
-
-          $ pip install -r requirements.txt
 
 * Install the m05_miniprojects package
    .. code-block::
