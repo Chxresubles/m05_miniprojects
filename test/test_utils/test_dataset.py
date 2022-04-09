@@ -18,7 +18,7 @@ $ pytest test/test_utils/test_dataset.py -vv -s
 
 import pytest
 import numpy as np
-from utils import dataset
+from m05.utils import dataset
 
 
 # ============================================================================================================

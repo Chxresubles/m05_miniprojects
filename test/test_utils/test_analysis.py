@@ -19,7 +19,7 @@ $ pytest test/test_utils/test_analysis.py -vv -s
 
 import numpy as np
 import pytest
-from utils import analysis
+from m05.utils import analysis
 
 
 # ============================================================================================================

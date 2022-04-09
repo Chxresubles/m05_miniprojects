@@ -31,7 +31,7 @@ jobs:
         flake8 . --count --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        coverage run -m --source utils,boston_house_prices,wine_quality pytest test -vv
+        coverage run -m --source m05 pytest test -vv
         coverage report
     - name: Upload coverage data to coveralls.io
       run: |

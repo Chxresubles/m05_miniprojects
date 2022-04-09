@@ -18,7 +18,7 @@ $ pytest test/test_utils/test_preprocessing.py -vv -s
 
 import numpy as np
 import pytest
-from utils import preprocessing
+from m05.utils import preprocessing
 
 
 # ============================================================================================================

@@ -18,7 +18,7 @@ $ pytest test/test_wine_quality/test_algorithm.py -vv -s
 
 import numpy as np
 import pytest
-from wine_quality import algorithm
+from m05.wine_quality import algorithm
 
 
 # ============================================================================================================
