@@ -18,7 +18,7 @@ $ pytest test/test_boston_house_price/test_algorithm.py -vv -s
 
 import numpy as np
 import pytest
-from boston_house_prices import algorithm
+from m05.boston_house_prices import algorithm
 
 
 # ============================================================================================================
